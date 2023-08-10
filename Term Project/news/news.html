@@ -1,0 +1,32 @@
+<html>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+    <!-- google font-->
+    <link href="../style.css" rel="stylesheet" />
+    <body class="s1">
+        <nav class=".navbar .navbar-expand{-sm|-md|-lg|-xl}">
+            <center>
+                <div>
+                    <a href="../index.html">回主頁</a>
+                    台北市中山區
+                    <button onclick="playm()">music</button>
+                </div>
+            </center>
+        </nav>
+        <div class="container flex ">
+            <iframe width="1024" height="2048" src="https://www.bing.com/news/search?q=%e5%8f%b0%e5%8c%97%e5%b8%82%e4%b8%ad%e5%b1%b1%e5%8d%80&FORM=HDRSC7" frameborder="0"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kCPGuKSY7VU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </body>
+
+<script>
+    var audio = new Audio("../asset/1.mp3"); // 创建一个Audio对象
+     // 播放音频
+    function playm(){
+        audio.play();
+    }
+</script>
+</html>

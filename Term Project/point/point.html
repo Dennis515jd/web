@@ -1,0 +1,75 @@
+<html>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+    <!-- google font-->
+    <link href="../style.css" rel="stylesheet" />
+    <body class="s1">
+        <nav class=".navbar .navbar-expand{-sm|-md|-lg|-xl}">
+            <center>
+                <div>
+                    <a href="../index.html">回主頁</a>
+                    台北市中山區
+                    <button onclick="playm()">music</button>
+                </div>
+            </center>
+        </nav>
+        <div class="container flex ">
+            <div class="box" onclick="bt(0)" onmouseover="enter_box(this)" onmouseout="out_box(this)">臺北市立美術館</div>
+            <div class="box" onclick="bt(1)"onmouseover="enter_box(this)" onmouseout="out_box(this)">美麗華</div>
+            <div class="box" onclick="bt(2)"onmouseover="enter_box(this)" onmouseout="out_box(this)">圓山大飯店</div>
+            <div class="box" onclick="bt(3)"onmouseover="enter_box(this)" onmouseout="out_box(this)">國民革命忠烈祠</div>
+            <div class="box" onclick="bt(4)"onmouseover="enter_box(this)" onmouseout="out_box(this)">大佳河濱公園</div>
+            <div class="box" onclick="bt(5)"onmouseover="enter_box(this)" onmouseout="out_box(this)">劍潭古寺</div>
+            <div class="box" onclick="bt(6)"onmouseover="enter_box(this)" onmouseout="out_box(this)">台北萬豪酒店</div>
+        </div>
+        <div>
+            <center>
+                <div id="txt">介紹:</div>
+                <iframe id="if" src="" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <img id="img"src="" alt="">
+            </center>
+        </div>
+    </body>
+
+    <script>
+   
+
+    var txt = [["美術館","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.8693598263344!2d121.52222991166911!3d25.07241663664965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a951fdd9f7f9%3A0x7a40c3880c03a171!2z6Ie65YyX5biC56uL576O6KGT6aSo!5e0!3m2!1szh-TW!2stw!4v1691675488006!5m2!1szh-TW!2stw"]
+                ,["有摩天輪的百貨公司","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.5588616829423!2d121.55516811166947!3d25.082936736225264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ac12f6cf7d73%3A0x4d733f290725ce21!2z576O6bqX6I-v55m-5qiC5ZyS5pGp5aSp6Lyq!5e0!3m2!1szh-TW!2stw!4v1691675790737!5m2!1szh-TW!2stw"]
+                ,["5星級飯店","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.697343717174!2d121.52445811166916!3d25.078245286414457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aead5af124f3%3A0xe6670c8237a11d3f!2z5ZyT5bGx5aSn6aOv5bqX!5e0!3m2!1szh-TW!2stw!4v1691675879770!5m2!1szh-TW!2stw"]
+                ,["忠烈祠","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.662778978932!2d121.53037531166933!3d25.07941633636724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aeaba3379c6f%3A0x2ecd7b9fa0d8c596!2z5ZyL5rCR6Z2p5ZG95b-g54OI56Wg!5e0!3m2!1szh-TW!2stw!4v1691675961420!5m2!1szh-TW!2stw"]
+                ,["基隆河道旁的大公園","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5110.682307905315!2d121.54024198744855!3d25.07483082546847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ac0099201ca3%3A0xe5164eddb6bbeab1!2z5aSn5L2z5rKz5r-x5YWs5ZyS!5e0!3m2!1szh-TW!2stw!4v1691676057377!5m2!1szh-TW!2stw"]
+                ,["老寺廟","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4297.138118991013!2d121.55371644401242!3d25.086690522744828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ac13f27edc79%3A0x815d5a3df97a3aa!2z5YqN5r2t5Y-k5a-6!5e0!3m2!1szh-TW!2stw!4v1691676129553!5m2!1szh-TW!2stw"]
+                ,["5星級飯店2","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.632082732146!2d121.55407795149345!3d25.080456279331898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ac0d57cba929%3A0xa49b99c29ceddf8a!2z5Y-w5YyX6JCs6LGq6YWS5bqX!5e0!3m2!1szh-TW!2stw!4v1691676181399!5m2!1szh-TW!2stw"]
+            ]
+    var ipng=[
+        "../asset/臺北市立美術館.jpg",
+        "../asset/美麗華.jpg",
+        "../asset/圓山大飯店.JPG",
+        "../asset/國民革命忠烈祠.png",
+        "../asset/大佳河濱公園.jpg",
+        "../asset/劍潭古寺.png",
+        "../asset/台北萬豪酒店.png"
+    ]
+    function bt(params) {
+        document.getElementById("txt").textContent = txt[params][0]
+        document.getElementById("if").src = txt[params][1]
+        document.getElementById("img").src = ipng[params]
+    }
+    var audio = new Audio("../asset/1.mp3"); // 创建一个Audio对象
+     // 播放音频
+    function playm(){
+        audio.play();
+    }
+    function enter_box(item){
+        item.className = "s2box"
+        console.log("sbox");
+    }
+    function out_box(item) {
+        item.className = "box"
+    }
+    </script>
+</html>

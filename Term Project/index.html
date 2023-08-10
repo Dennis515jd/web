@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+    <!-- google font-->
+    <link href="style.css" rel="stylesheet" />
+
+    <body class="s1">
+        <center>
+        <main>
+
+            
+
+            <!-- 導航-->
+            <nav class=".navbar .navbar-expand{-sm|-md|-lg|-xl}">
+                <center>
+                    <div>台北市中山區</div>
+                </center>
+                <button onclick="playm()">music</button>
+            </nav>
+            <!-- 圖片-->
+            <div>
+                <center>
+                    <img src="a" alt="" width="1024" height="421" id="img" onfocus="" class="img">
+                </center>
+            </div>
+
+            <div class="container flex ">
+                <div class="col box" onclick="bt(1)" onmouseover="enter_box(this)" onmouseout="out_box(this)">
+                    旅遊景點
+                </div>
+                <div class="col box" onclick="bt(2)" onmouseover="enter_box(this)" onmouseout="out_box(this)">
+                    美食
+                </div>
+                <div class="col box" onclick="bt(3)" onmouseover="enter_box(this)" onmouseout="out_box(this)">
+                    地理位置
+                </div>
+                <div class="col box" onclick="bt(4)" onmouseover="enter_box(this)" onmouseout="out_box(this)">
+                    最新消息
+                </div>
+                <div class="col box" onclick="bt(5)" onmouseover="enter_box(this)" onmouseout="out_box(this)">
+                    小遊戲
+                </div>
+                <div class="col box" onclick="bt(6)" onmouseover="enter_box(this)" onmouseout="out_box(this)">
+                    旅遊地圖
+                </div>
+            </div>
+        </main>
+        </center>
+
+    </body>
+<script>
+    var audio = new Audio("asset/2.mp3"); // 创建一个Audio对象
+     // 播放音频
+    function playm(){
+        audio.play();
+    }
+
+    var count=-1
+    var source=[
+        ["asset/美麗華.jpg","美麗華"],
+        ["asset/圓山大飯店.JPG","圓山大飯店"],
+        ["asset/大佳河濱公園.jpg","大佳河濱公園"],
+        ["asset/大佳河濱公園2.png","大佳河濱公園"],
+        ["asset/台北萬豪酒店.png","台北萬豪酒店"],
+        ["asset/國民革命忠烈祠.png","國民革命忠烈祠"],
+        ["asset/國民革命忠烈祠2.jpg","國民革命忠烈祠"],
+        ["asset/捷運站.png","捷運站"],
+        ["asset/臺北市立美術館.jpg","臺北市立美術館"],
+        ["asset/劍潭古寺.png","劍潭古寺"],
+
+    ]
+    var id01=setInterval(changeimg,3000)
+    changeimg()
+    function changeimg(){
+        if(count==10){
+            count=0}   
+        else{
+            count++}
+        console.log("change img to:"+count);
+        document.getElementById("img").src=source[count][0]
+        document.getElementById("img").title=source[count][1]
+    }
+    function bt(t){
+        switch (t) {
+            case 1:
+                document.location.href="point/point.html"
+                break
+            case 2:
+                document.location.href="food/food.html"
+                break
+            case 3:
+                document.location.href="map/map.html"
+                break
+            case 4:
+                document.location.href="news/news.html"
+                break
+            case 5: 
+                document.location.href="numgame/num.html"
+                break
+            case 6:
+                document.location.href="tmap/tmap.html"
+            default:
+                break;
+        }
+    }
+    function enter_box(item){
+        item.className = "sbox"
+        console.log("sbox");
+    }
+    function out_box(item) {
+        item.className = "box"
+    }
+
+
+</script>
+
+</html>
